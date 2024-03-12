@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moduel</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .big {
+            width: 1250px;
+            height: 2900px;
+            margin: auto;
+            overflow: hidden;
+            /* background-color:#5d5959; */
+        }
+
+        img {
+            border-radius: 3px;
+        }
+
+        .caidan {
+            width: 1250px;
+            height: 80px;
+            margin-bottom: 10px;
+            background-color: #fff000;
+            /* position: absolute; */
+        }
+
+        .caidan img {
+            width: 200px;
+            height: 80px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .caidan li {
+            /* position: relative; */
+            float: left;
+            list-style: none;
+            margin-right: 20px;
+            margin-top: 30px;
+        }
+
+        .caidan a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #ff00f0;
+        }
+
+        .caidan a:hover {
+            color: #00f0ff;
+        }
+
+        #yiji {
+            width: 160px;
+            height: 50px;
+            /* background-color: #f0ff0f; */
+
+        }
+
+        #erji {
+            overflow: hidden;
+            height: 0px;
+            background-color: #00f0ff;
+            transition: height 0.2s;
+            /* z-index: 999; */
+        }
+
+        #erji:hover {
+            background-color: palegoldenrod;
+        }
+
+        .sou {
+            width: 550px;
+            height: 50px;
+            background-color: paleturquoise;
+            border: 2px solid paleturquoise;
+            border-radius: 50px 0px 0px 50px;
+            margin: auto;
+        }
+
+        .sou-text {
+            width: 450px;
+            height: 48px;
+            border: none;
+            outline: none;
+            border-radius: 50px 3px 3px 50px;
+        }
+
+        .sou-clear {
+            position: absolute;
+            display: none;
+            width: 16px;
+            height: 16px;
+            margin: 13px 0px 0px -20px;
+        }
+
+        .sou-text::-ms-sou-clear {
+            display: none;
+        }
+
+        .sou-text:valid+.sou-clear {
+            display: inline;
+        }
+
+        .sou-button {
+            width: 48px;
+            height: 48px;
+            border: none;
+            outline: none;
+            background-color: paleturquoise;
+        }
+
+        .banner {
+            width: 700px;
+            height: 500px;
+            margin: auto;
+            margin-top: 10px;
+            /* background-color:#ffcc00; */
+            /* overflow: hidden; */
+            position: relative;
+
+        }
+
+        .imgs {
+            width: 700px;
+            height: 500px;
+            position: absolute;
+            opacity: 0;
+            transition: all 1.5s;
+            /* z-index: -1; */
+
+        }
+
+        .imgs:nth-child(1) {
+            opacity: 1;
+        }
+
+        .left {
+            position: absolute;
+            top: 250px;
+            width: 15px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .left:hover {
+            background-color: #5d5959;
+        }
+
+        .right {
+            position: absolute;
+            top: 250px;
+            right: 0px;
+            width: 15px;
+            height: 30px;
+        }
+
+        .right:hover {
+            background-color: #5d5959
+        }
+
+        .dian {
+            position: relative;
+            top: 460px;
+            left: 550px;
+
+        }
+
+        .dian>ul {
+            list-style: none;
+        }
+
+        .dian li {
+            width: 15px;
+            height: 15px;
+            float: left;
+            border-radius: 100%;
+            background-color: #f0ffff;
+            margin-right: 10px;
+        }
+
+        .dian li:hover {
+            background-color: antiquewhite;
+        }
+
+        .dian li:nth-child(1) {
+            background-color: #f0ffff;
+        }
+
+        .title1 {
+            width: 1250px;
+            height: 500px;
+            margin-top: 20px;
+            background-color: rgb(255, 198, 230);
+            position: relative;
+        }
+
+        .title1 h1 {
+            text-align: center;
+        }
+
+        .title1 p {
+            width: 1200px;
+            height: 150px;
+            margin-left: 25px;
+            /* background-color: #00f0ff; */
+        }
+
+        .title1-big {
+            width: 800px;
+            height: 250px;
+            /* background-color: #6a20b9; */
+        }
+
+        .title1-img {
+            width: 800px;
+            height: 150px;
+            /* background-color: papayawhip; */
+            /* margin-left: 250px; */
+            /* position: absolute; */
+            overflow: hidden;
+
+        }
+
+        .title1-ul {
+            width: 800px;
+            height: 150px;
+            /* margin: auto; */
+            display: flex;
+            /* background-color: #00f0ff; */
+            list-style: none;
+            left: 0px;
+            position: relative;
+
+        }
+
+        .title1-li {
+            position: relative;
+
+        }
+
+        .title1-img img {
+            width: 200px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        .title1-button {
+            width: 160px;
+            height: 35px;
+            display: flex;
+            margin-left: 300px;
+            margin-top: 20px;
+
+            /* background-color: #f0ffff; */
+        }
+
+        .title1-left {
+            border: 2px solid black;
+            margin-right: 20px;
+            padding-top: 5px;
+            border-radius: 3px;
+
+        }
+
+        .title1-right {
+            border: 2px solid black;
+            padding-top: 5px;
+            border-radius: 3px;
+
+
+        }
+
+        .title1-left:hover {
+            background-color: antiquewhite;
+        }
+
+        .title1-right:hover {
+            background-color: antiquewhite;
+        }
+
+        .title1 a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .title2 {
+            width: 1250px;
+            height: 500px;
+            margin-top: 20px;
+            background-color: #f0ffff;
+        }
+
+        .title2 h1 {
+            text-align: center;
+        }
+
+        .title2-big {
+            width: 1250px;
+            /* height:450px; */
+            display: flex;
+            /* background-color: #f0ff0f; */
+            margin-top: 50px;
+
+        }
+
+        .title2-img {
+            width: 300px;
+            height: 270px;
+            position: relative;
+            margin-right: 5px;
+            margin-left: 5px;
+            background-color: #00ffff;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+                0 2px 2px rgba(0, 0, 0, 0.1),
+                0 4px 4px rgba(0, 0, 0, 0.1),
+                0 8px 8px rgba(0, 0, 0, 0.1),
+                0 16px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .title2-img::before {
+            content: "";
+            width: 100%;
+            height: 110%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: url(/集训网站设计1.15-1.27/河南美食/img/郑州烩面.png);
+            background-size: cover;
+            background-position: 0 0;
+            transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .title2-img:nth-child(1)::before {
+            background: url(/集训网站设计1.15-1.27/河南美食/img/郑州烩面.png);
+            background-size: cover;
+
+        }
+
+        .title2-img:nth-child(2)::before {
+            background: url(/集训网站设计1.15-1.27/河南美食/img/洛阳不翻汤.png);
+            background-size: cover;
+
+        }
+
+        .title2-img:nth-child(3)::before {
+            background: url(/集训网站设计1.15-1.27/河南美食/img/红烧肉.png);
+            background-size: cover;
+
+        }
+
+        .title2-img:nth-child(4)::before {
+            background: url(/集训网站设计1.15-1.27/河南美食/img/北舞渡胡辣汤.png);
+            background-size: cover;
+
+        }
+
+        .title2-img .title2-imgs {
+            width: 100%;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transform: translateY(99%);
+        }
+
+        .title2-img .title2-imgs *:not(h2) {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .title2-img:hover {
+            align-items: center;
+        }
+
+        .title2-img:hover ::before {
+            transform: translateY(-5%);
+        }
+
+        .title2-img:hover .title2-imgs {
+            transform: translateY(5%);
+        }
+
+        .title2-img button {
+            width: 80px;
+            height: 40px;
+            background-color: rgb(170, 203, 232);
+            border: none;
+        }
+
+        .title2-img button:hover {
+            background-color: rgb(126, 236, 240);
+
+        }
+
+        .title2-img:hover .title2-imgs *:not(h2) {
+            opacity: 1;
+            transform: translateY(0);
+
+        }
+
+        .title2-img a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .title2 a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .title3 {
+            width: 1250px;
+            height: 500px;
+            margin-top: 20px;
+            background-color: #c6caf5;
+        }
+
+        .title3 h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title3 a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .title3-big {
+            width: 800px;
+            height: 400px;
+            background-color: rgb(87, 236, 221);
+            margin: auto;
+        }
+
+        .title3-one {
+            width: 800px;
+            height: 400px;
+            background-color: palegoldenrod;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .title3-one:nth-child(1) {
+            background-color: rgb(170, 238, 197);
+            opacity: 1;
+        }
+
+        .title3-one:nth-child(2) {
+            background-color: rgb(170, 231, 238);
+        }
+
+        .title3-one:nth-child(3) {
+            background-color: rgb(170, 181, 238);
+        }
+
+        .title3-one:nth-child(4) {
+            background-color: rgb(214, 170, 238);
+        }
+
+        .title3-left {
+            position: absolute;
+            width: 80px;
+            height: 400px;
+            /* background-color: #4955db; */
+        }
+
+        .title3-right {
+            position: absolute;
+            width: 80px;
+            height: 400px;
+            /* background-color: #4955db; */
+            margin-left: 720px;
+
+        }
+
+        .title3-button {
+            /* width:50px;
+            height: 50px; */
+            display: flex;
+            border-radius: 100%;
+            border: 3px palevioletred solid;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 170px;
+            margin-left: 15px;
+        }
+
+        .title3-button:hover {
+            background-color: #ed93fa;
+        }
+
+        .title3-one p {
+            width: 630px;
+            height: 170px;
+            /* background-color: palevioletred; */
+            margin: auto;
+            margin-top: 10px;
+
+        }
+
+        .title3-one img {
+            width: 150px;
+            height: 200px;
+            margin-left: 120px;
+        }
+
+        .title3-img2 img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .title4 {
+            width: 1250px;
+            height: 500px;
+            margin-top: 20px;
+            background-color: #f0ff0f;
+        }
+
+        .title4 h1 {
+            text-align: center;
+        }
+
+        .title4 img {
+            width: 400px;
+            height: 270px;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+
+        .title4 img:hover {
+            transform: scale(1.1);
+        }
+
+        .dibu {
+            width: 1250px;
+            height: 120px;
+            margin-top: 20px;
+            background-color: #000000;
+        }
+
+        .dibu img {
+            width: 200px;
+            height: 80px;
+
+        }
+
+        .dibu-center {
+            width: 800px;
+            height: 100px;
+            /* background-color: #c6caf5; */
+            margin: auto;
+            display: flex;
+        }
+
+        .dibu a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .dibu p {
+            color: white;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="big">
+        <div class="caidan">
+            <p id="shouye"></p>
+            <img src="D:\集训网站设计1.15-1.27\河南美食\img\logo2.1.png" />
+            <ol>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">豫菜文化历史</a></li>
+                <li id="yiji" onclick="TileClick()">
+                    <a href="#">各地特色饮食</a>
+                    <ol id="erji">
+                        <li><a href="#">郑州饮食</a></li>
+                        <li><a href="#">洛阳饮食</a></li>
+                        <li><a href="#">周口饮食</a></li>
+                        <li><a href="#">漯河饮食</a></li>
+                    </ol>
+                </li>
+                <li><a href="#">主流饮食文化</a></li>
+                <li><a href="#">美食文化地图</a></li>
+                <li><a href="zhuce.html">注册/登录</a></li>
+                <li><a href="#">查看更多</a></li>
+            </ol>
+        </div>
+        <div class="sou">
+            <input type="text" class="sou-text" placeholder="请输入..." required><a class="sou-clear">×</a>
+            <input type="button" class="sou-button" value="搜索">
+        </div>
+        <div class="banner">
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\河南省美食行政图.png" />
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\豫菜.jpg" />
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\郑州烩面.png" />
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\洛阳不翻汤.png" />
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\濮阳装模.png" />
+            <img class="imgs" src="D:\集训网站设计1.15-1.27\河南美食\img\北舞渡胡辣汤.png" />
+            <div class="left">&lt;</div>
+            <div class="right">&gt;</div>
+            <div class="dian">
+                <ul>
+                    <li class="yuan"></li>
+                    <li class="yuan"></li>
+                    <li class="yuan"></li>
+                    <li class="yuan"></li>
+                    <li class="yuan"></li>
+                    <li class="yuan"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="title1">
+            <span id="moduel1"></span>
+            <h1>豫菜文化历史</h1>
+            <br />
+            <p>&nbsp;&nbsp;&nbsp;豫菜（读音：yù cài），又名豫宴<br />
+                &nbsp;&nbsp;&nbsp;一般指的是中原（河南）菜系。它是对在带有中原传统文化内涵的烹饪理论指导下，运用具备中原地域特点的技术和材料所制作的菜肴、面点和筵席的总称。
+                豫菜讲究五味调和，质味适中。“中”是指豫菜不偏甜、不偏咸、不偏辣、不偏酸，而于甜咸酸辣之间求其中；“和”是指融东西南北为一体，合甜咸酸辣于一鼎，而求一味。
+                当代豫菜是在原宫廷菜、官府菜、市肆菜和民间菜的基础上，根据中原物质条件，逐步积累演变而发展起来的。
+                而有“烹饪鼻祖”和“中华厨祖”之称的伊尹便出生于河南。他创立的“五味调和说”，传承两千年，所以豫菜又被称为“八大菜系之母”。
+                <br />
+                十大名菜：黄河鲤鱼焙面、煎扒青鱼头尾、炸紫酥肉、 扒广肚、牡丹燕菜、 清汤鲍鱼、 芙蓉海参、 葱扒羊肉、汴京烤鸭、炸八块道口烧鸡
+                <a href="#"><i>查看更多...</i></a>
+
+            </p>
+            <div class="title1-big">
+                <div class="title1-img">
+                    <ul class="title1-ul">
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\伊尹烹饪器材.jpg" /></li>
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\烧鸡.png" /></li>
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\鱼.png" /></li>
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\牡丹花.png" /></li>
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\葱爆羊肉.png" /></li>
+                        <li class="title1-li"><img src="D:\集训网站设计1.15-1.27\河南美食\img\红烧肉.png" /></li>
+                        <ul>
+                </div>
+                <div class="title1-button">
+                    <div class="title1-left">←向左走</div>
+                    <div class="title1-right">向右走→</div>
+                </div>
+            </div>
+        </div>
+        <div class="title2">
+            <span id="moduel2"></span>
+            <h1>各地特色饮食</h1>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                郑州为中心、由四个不同的口味区构成：豫东以开封为代表，恪守传统、扒制类菜肴为典型，口味居中；豫西以洛阳为代表，水席为典型风味，口味稍偏酸；豫南以信阳为代表，炖菜较为典型，口味稍偏辣；豫北以新乡、安阳为代表，善用土特产，口味偏重。
+                <a href="#"><i>查看更多...</i></a>
+            </p>
+            <div class="title2-big">
+                <div class="title2-img">
+                    <div class="title2-imgs">
+                        <h2>郑州烩面</h2>
+                        <p>
+                            郑州烩面是河南省郑州市的一道特色名菜，属于豫菜系，该菜品也是河南面食的代表作之一；
+                            烩面口感劲道，也是河南的三大小吃之一；郑州烩面兴起于二十世纪八十年代，拥有50多年的历史，
+                            以味道鲜美，汤好面筋，经济实惠，营养丰富，享誉中原，遍及全国。有羊肉烩面、三鲜烩面、五鲜
+                            烩面等多种类型。
+                        </p>
+                        <button><a href="#">查看更多</a></button>
+                    </div>
+                </div>
+                <div class="title2-img">
+                    <div class="title2-imgs">
+                        <h2>洛阳不翻汤</h2>
+                        <p>
+                            洛阳不翻汤是河南省洛阳市的传统小吃之一，该菜品酸辣咸香，醒酒开胃，回味无穷，洛阳人亦称其为
+                            “九府门不翻汤”，距今已有120余年的历史。在鏊子上烙成薄饼再佐以金针、粉丝、韭菜、海带、香菜、虾皮、
+                            木耳、紫菜等，加入精盐、味精、胡椒、香醋等调料制作而成。是洛阳人每逢重要时刻必不可少的首选</p>
+                        <button><a href="#">查看更多</a></button>
+                    </div>
+                </div>
+                <div class="title2-img">
+                    <div class="title2-imgs">
+                        <h2>周口太康肘子</h2>
+                        <p>
+                            河南周口市也是美食众多，而太康肘子就是比较出名的特色名吃，常见的太康肘子做法，先剁成小块然后加
+                            香料炖煮，每一块都入味。还有一种做法是把猪腿靠近猪手的部分单独剁一块成人拳头那么大的肘子，加香料炖
+                            煮好后，肘皮肥而不腻，肘子肉香而不柴，每一口都会让人赞不绝口还想再吃。
+                        </p>
+                        <button><a href="#">查看更多</a></button>
+                    </div>
+                </div>
+                <div class="title2-img">
+                    <div class="title2-imgs">
+                        <h2>漯河胡辣汤</h2>
+                        <p>
+                            北舞渡胡辣汤是中国地域十大名小吃之一，也是漯河最具代表性的特色小吃。 北舞渡胡辣汤源自舞阳县北舞渡镇，
+                            是用猪肉、羊肉、牛肉等肉类和面粉、香菜、葱花等配料熬制而成的一种汤类小吃。 北舞渡胡辣汤色泽红亮，香气扑鼻，
+                            味道鲜辣浓郁，既能暖胃又能开胃。 北舞渡胡辣汤通常搭配油条、馒头等主食食用。
+                        </p>
+                        <button><a href="#">查看更多</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title3">
+            <span id="moduel3"></span>
+            <h1>主流饮食文化</h1>
+            <div class="title3-big">
+                <div class="title3-one">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说起河南，你会想到什么？郑州？洛阳？开封？黄河？河南人？而我想到的却是河南的面。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        河南的地理位置造就了独特主流饮食风格河南地处中原，同时拥有黄河流域和淮河流域的广大土地。明朝以前，小麦在这里得到广泛的种植。明朝以来，逐渐形成以小麦
+                        和玉米为主要农作物的一年两季种植规律。
+                        河南的面食多种多样，最常见的有馒头、包子、稀饭、面条、油条、面疙瘩、糖糕、麻花、煎饼、摊饼、烧饼、面鱼、胡辣汤等等。
+                        <a href="#"><i>查看更多...</i></a>
+                    </p>
+                    <img src="D:\集训网站设计1.15-1.27\河南美食\img\麦田.jpeg" />
+                    <img src="D:\集训网站设计1.15-1.27\河南美食\img\秋收.jpg" />
+                </div>
+                <div class="title3-one">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;馒头<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;馒头又称馍或馍馍，白嫩又柔软，深受人们的喜爱。如今，馒头销往全国各地，早已成为很多地域人们不可或缺饭食。随着生物科技的发展，馒头的制作工艺有了很大的提高。
+                        馒头制作的主要过程：第一步，用水和面，加入一些酵皮或发酵粉。第二步，面团成型。第三步，放入盆中进行醒面，持续几个小时，主要目的是让酵母菌充分发酵，从而在面团里产生大量气泡。第四步，把面团按馒头形状进行分切。第五步，蒸馒头。
+                        <a href="#"><i>查看更多...</i></a>
+                    </p>
+                    <div class="title3-img2"><img src="D:\集训网站设计1.15-1.27\河南美食\img\馒头.png" /></div>
+                </div>
+                <div class="title3-one">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面条<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因为河南人把午餐作为正餐，讲究吃得实惠、吃得饱，希望给身体补充足够多的能量，以应付漫长的下午劳动。
+                        <br />
+                        第一种：汤面条，即用水煮熟的面条。
+                        <br />
+                        第二种：蒸面条，即用水蒸气蒸的面条。
+                        <br />
+                        第三种：凉面条，即汤面条经过凉水过滤的面条。
+                        <a href="#"><i>查看更多...</i></a>
+                    </p>
+                    <div class="title3-img2"><img src="D:\集训网站设计1.15-1.27\河南美食\img\面条.png" /></div>
+                </div>
+                <div class="title3-one">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;稀饭<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;河南人喜欢早上喝稀饭，往往能喝上几大碗。因为稀饭类似流食，所以特别养胃。经常喝稀饭的人，很少得胃病。
+                        <br />
+                        第一种：普通稀饭，小麦粉和水煮成的稀饭。
+                        <br />
+                        第二种：红薯稀饭，普通稀饭中加入红薯煮成的稀饭。
+                        <br />
+                        第三种：南瓜稀饭，普通稀饭中加入南瓜煮成的稀饭。
+                        <br />
+                        第四种：大米稀饭，普通稀饭加入大米煮成的稀饭。
+                        <br />
+                        第五种：小米稀饭，用小米熬制的稀饭。
+                        <a href="#"><i>查看更多...</i></a>
+                    </p>
+                    <div class="title3-img2"><img src="D:\集训网站设计1.15-1.27\河南美食\img\稀饭.png" /></div>
+                </div>
+                <div class="title3-left">
+                    <div class="title3-button">&nbsp;&lt;</div>
+                </div>
+                <div class="title3-right">
+                    <div class="title3-button">&nbsp;&gt;</div>
+                </div>
+            </div>
+        </div>
+        <div class="title4">
+            <span id="moduel4"></span>
+            <h1>美食文化地图</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品各色美食看天下风景河南，中国之中原，历史悠长，文化底蕴深厚。美食如烩面、胡辣汤香气扑鼻，让人回味无穷。烩面，面条细腻柔滑，汤汁浓郁，配料丰富，每一口都能感受到河南人民的匠心独运。胡辣汤，辣而不燥，汤底醇厚，配料多样，是河南人民对美食的热爱和追求的最好体现。美景有龙门石窟、少林寺尽显古今交融。龙门石窟，石刻艺术瑰宝，佛像栩栩如生，令人惊叹。少林寺，武术之乡，禅宗祖庭，建筑古朴典雅，充满禅意。河南，一个充满魅力的地方，期待你的探索。
+            </p>
+            <img src="D:\集训网站设计1.15-1.27\河南美食\img\龙门石窟.jpg" />
+            <img src="D:\集训网站设计1.15-1.27\河南美食\img\河南省美食行政图.png" />
+        </div>
+        <div class="dibu">
+            <br />
+            <div class="dibu-center">
+                <img src="D:\集训网站设计1.15-1.27\河南美食\img\logo2.1.png" />
+                <p>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="#shouye">首页</a>|
+                    <a href="#moduel1">豫菜文化历史</a>|
+                    <a href="#moduel2">各地特色饮食</a>|
+                    <a href="#moduel3">主流饮食文化</a>|
+                    <a href="#moduel4">饮食文化地推</a>
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy;新乡职业技术学院·河南美食风景文化
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript" src="jQuery.min.js"></script>
+    <script>
+        var erji = document.getElementById('erji');
+        function TileClick() {
+            // alert(erji.style.width)
+            erji.style.height = erji.offsetHeight == 300 ? 0 + 'px' : 300 + 'px';
+        }
+        $(function () {
+            var index = 0;
+            var diaoyong;
+
+            dingshiqi();
+            function dingshiqi() {
+                diaoyong = setInterval(function () {
+                    if (index == $('.imgs').length - 1) {
+                        index = 0;
+                        $('.imgs').css("opacity", "0");
+                        $('.imgs').eq(index).css("opacity", "1");
+                        $('.yuan').css('background-color', 'antiquewhite');
+                        $('.yuan').eq(index).css('background-color', '#f0ffff');
+                    } else {
+                        index++;
+                        $('.imgs').css("opacity", "0");
+                        $('.imgs').eq(index).css("opacity", "1");
+                        $('.yuan').css('background-color', 'antiquewhite');
+                        $('.yuan').eq(index).css('background-color', '#f0ffff');
+                    }
+                }, 3000)
+            }
+            $('.left').click(function () {
+                clearInterval(diaoyong);
+                if (index == 0) {
+                    index = $('.imgs').length - 1;
+                    $('.imgs').css("opacity", "0");
+                    $('.imgs').eq(index).css("opacity", "1");
+                    $('.yuan').css('background-color', 'antiquewhite');
+                    $('.yuan').eq(index).css('background-color', '#f0ffff');
+                    dingshiqi();
+                } else {
+                    index--;
+                    $('.imgs').css("opacity", "0");
+                    $('.imgs').eq(index).css("opacity", "1");
+                    $('.yuan').css('background-color', 'antiquewhite');
+                    $('.yuan').eq(index).css('background-color', '#f0ffff');
+                    dingshiqi();
+                }
+            })
+            $('.right').click(function () {
+                clearInterval(diaoyong);
+                if (index == $('.imgs').length - 1) {
+                    index = 0;
+                    $('.imgs').css("opacity", "0");
+                    $('.imgs').eq(index).css("opacity", "1");
+                    dingshiqi();
+                } else {
+                    index++;
+                    $('.imgs').css("opacity", "0");
+                    $('.imgs').eq(index).css("opacity", "1");
+                    $('.yuan').css('background-color', 'antiquewhite');
+                    $('.yuan').eq(index).css('background-color', '#f0ffff');
+                    dingshiqi();
+                }
+            })
+            $('.yuan').click(function () {
+                clearInterval(diaoyong);
+                var indexx = $(this).index();
+                index = indexx;
+                $('.imgs').css("opacity", "0");
+                $('.imgs').eq(index).css("opacity", "1");
+                $('.yuan').css('background-color', 'antiquewhite');
+                $('.yuan').eq(index).css('background-color', '#f0ffff');
+                dingshiqi();
+            })
+        })
+        // 清除
+        var soutext = document.getElementsByClassName('sou-text');//获取输入框 但是返回值是伪数组
+        var soutexts = soutext[0];//返回值是伪数组所以获取第一个元素赋值给一个变量
+        $('.sou-clear').click(function () {//获取清除按钮 注册点击事件
+            soutexts.value = '';//当点击清除按钮时 搜索框 value=''就没有内容了
+        })
+
+
+        // title1
+        let uls = document.querySelector('.title1-ul');
+        uls.innerHTML = uls.innerHTML + uls.innerHTML;
+        let lis = document.querySelectorAll('.title1-li');
+        let spent = -2;
+        uls.style.width = lis[0].offsetWidth * lis.length + 'px';
+        //    alert(uls.offsetLeft)
+        function move() {
+            if (uls.offsetLeft < -uls.offsetWidth / 2) {
+                uls.style.left = '0';
+            }
+            if (uls.offsetLeft > 0) {
+                uls.style.left = -uls.offsetWidth / 2 + 'px';
+            }
+
+            uls.style.left = uls.offsetLeft + spent + 'px';
+        }
+        let timer = setInterval(move, 300);
+        uls.addEventListener('mousemove', function () {
+            clearInterval(timer);
+        })
+        uls.addEventListener('mouseout', function () {
+            timer = setInterval(move, 300);
+        })
+        let btn = document.querySelector('.title1-left');
+        let btns = document.querySelector('.title1-right');
+        btn.addEventListener('click', function () {
+            spent = -2;
+        })
+        btns.addEventListener('click', function () {
+            spent = 2;
+        })
+        // title3
+        var title3index = 0;
+        $('.title3-left').click(function () {
+            if (title3index == 0) {
+                title3index = $('.title3-one').length - 1;
+                $('.title3-one').css('opacity', '0');
+                $('.title3-one').eq(title3index).css('opacity', '1');
+            } else {
+                title3index--;
+                $('.title3-one').css('opacity', '0');
+                $('.title3-one').eq(title3index).css('opacity', '1');
+            }
+        })
+        $('.title3-right').click(function () {
+            if (title3index == $('.title3-one').length - 1) {
+                title3index = 0;
+                $('.title3-one').css('opacity', '0');
+                $('.title3-one').eq(title3index).css('opacity', '1');
+            } else {
+                title3index++;
+                $('.title3-one').css('opacity', '0');
+                $('.title3-one').eq(title3index).css('opacity', '1');
+            }
+        })
+    </script>
+</body>
+
+</html>
