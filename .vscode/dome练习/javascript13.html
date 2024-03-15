@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变表单元素属性</title>
+</head>
+
+<body>
+    <!-- 表单属性：value值 type属性 checked选择 selected disabled是否使用 -->
+    <button>按钮</button>
+    <input type="text" value="输入内容" />
+</body>
+<script>
+    // 获取元素
+    var btn = document.querySelector('button');
+    var inputs = document.querySelector('input');
+    // 绑定事件
+    btn.onclick = function () {
+        // 当点击按钮之后 输入框里面的内容发生改变
+        // 改变输入框里面的值 value
+        inputs.value = '被点击过';
+        // 当点击过按钮之后不在使用 disabled是否使用 ture使用过禁用了
+        //    this 指事件函数的调用者btn
+        this.disabled = 'ture';
+    }
+
+</script>
+
+</html>

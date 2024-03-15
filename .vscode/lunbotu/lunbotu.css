@@ -1,0 +1,64 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.hezi{
+    width:520px;
+    height:280px;
+    margin:100px auto;
+    /* margin:auto绝对定位 */
+    position: relative;
+    /* position: relative;相对定位 */
+    overflow: hidden;
+    /*  overflow: hidden;溢出隐藏不占位 */
+}
+.imgs{
+    position:absolute;
+    /* position:absolute;相对定位 */
+    top:0px;
+    left:0px;
+    width:700%;
+}
+.imgs li{
+    float:left;
+}
+.hezi img{
+    width:520px;
+    height:280px;
+}
+.leftj,rightj{
+    display:none;
+    position:absolute;
+    top:50%;
+    margin-top: -15px;
+    width:20px;
+    height:30px;
+    background: rgba(226, 5, 201, 0.342);
+    text-align: center;
+    line-height:30px;
+    color:#fff;
+    text-decoration: none;
+}
+.leftj{
+    left:0px;
+    /* 设置圆角 */
+    border-top-right-radius:15px;
+    border-bottom-right-radius: 15px;
+}
+.rightj{
+    right:0px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+}
+.dots li{
+    float:left;
+    width:8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin:3px;
+}
+.dots.avtive{
+    background-color: #ff5000;
+}
+

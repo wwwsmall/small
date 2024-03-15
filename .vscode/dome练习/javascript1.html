@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript onclick 输出</title>
+</head>
+
+<body>
+    <p id="demo">这是一个段落</p>
+    <p>使用document.getElementById("demo")获取id为demo的元素 innerHTML将时间写入获取的元素中</p>
+    <button type="button" onclick="displayDate()">对应元素显示日期</button><br />
+    <button type="button" onclick="onclickhtml()">文档覆盖显示日期</button>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    function displayDate() {
+        // 当点击按钮时 p 变为当前时间 Date()获取当前时间
+        document.getElementById('demo').innerHTML = Date();
+    }
+    function onclickhtml() {
+        // 整个HTML文档被覆盖
+        document.write(Date());
+    }
+    var a = 1;
+    var b = 2;
+    // console.log()向控制台输出
+    console.log(a + b);
+    // document.write()向页面中输出
+    document.write(a);
+    // alert()弹出警告框
+    alert(b);
+</script>
+
+</html>

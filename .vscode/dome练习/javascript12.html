@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例：分时问候</title>
+    <!-- 描述：在不同的时间打开显示不同的图片和问候语 -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+        }
+
+        div {
+            position: relative;
+            margin-top: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="D:\集训网站设计1.15-1.27\img\domeimg\wl.png" />
+    <div>上午好</div>
+</body>
+<script>
+    var imgs = document.querySelector('img');
+    var divs = document.querySelector('div');
+    var date = new Date();//获取当前年月日时分 注意要写成new date才能获取get一系列的值
+    var h = date.getHours();//获取时间
+    // if判断时间<12上午 <18下午 else晚上
+    if (h < 12) {
+        imgs.src = '/集训网站设计1.15-1.27/img/domeimg/wl.png';
+        divs.innerHTML = '上午好';
+    } if (h < 18) {
+        imgs.src = '/集训网站设计1.15-1.27/img/domeimg/lyn.png';
+        divs.innerHTML = '下午好';
+    } else {
+        imgs.src = '/集训网站设计1.15-1.27/img/domeimg/库洛米1.png';
+        divs.innerHTML = '晚上好';
+    }
+</script>
+
+</html>

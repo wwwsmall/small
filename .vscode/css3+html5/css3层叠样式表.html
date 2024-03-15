@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层叠样式表@media</title>
+</head>
+<style>
+    abbr {
+        color: chocolate;
+    }
+
+    @media(hover:hover) {
+        abbr:hover {
+            color: limegreen;
+            transition-duration: 1s;
+        }
+    }
+
+    @media not all and(hover:hover) {
+        abbr::after {
+            content: '(' attr(title)')';
+        }
+    }
+</style>
+
+<body>
+    <p>层叠样式表@media媒体类型</p>
+</body>
+
+</html>

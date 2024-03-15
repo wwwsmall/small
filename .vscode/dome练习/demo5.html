@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折叠菜单运用</title>
+    <!-- <link rel="stylesheet" href="dome5.css"> -->
+    <style>
+        li{
+            list-style: none;    
+        }
+        #one{
+            height: 50px;
+            width:150px;
+            font-size: 30px;
+            text-align: center;
+            background-color: palegoldenrod;
+        }
+        #two{
+            height: 0px;
+            overflow: hidden;
+            /* opacity: 1; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 150px; background-color: palegoldenrod; overflow: hidden;">
+        <div>
+            <div id="title" style="height: 50px; background-color: pink; font-size: 30px; text-align: center;"
+                onclick="onTileClick()">项目注册</div>
+            <div id="content" style="height: 0px; background-color: paleturquoise; transition: height 0.2s; ">
+                <a href="#"
+                    style="text-decoration: none; font-size: 30px; padding-left: 15px;color: black;">我要注册</a><br />
+                <a href="#"
+                    style="text-decoration: none; font-size: 30px; padding-left: 15px;color: black;">我要发布</a><br />
+                <a href="#"
+                    style="text-decoration: none; font-size: 30px; padding-left: 15px;color: black;">我的项目</a><br />
+            </div>
+        </div>
+    </div>
+    <ol>
+        <li id="one" onclick="dianji()">标题
+            <ol id="two">
+                <li>小标题</li>
+                <li>小标题</li>
+                <li>小标题</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    var content = document.getElementById('content')
+    function onTileClick() {
+        content.style.height = content.offsetHeight == 150 ? 0 + 'px' : 150 + 'px';
+
+    }
+    var tu = document.getElementById('two');
+    function dianji(){
+        // tu.css('opacity','0');
+        // alert(1);
+        tu.style.height=tu.offsetHeight == 150?0+'px':150+'px'
+    }
+</script>
+
+</html>

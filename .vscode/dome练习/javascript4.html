@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css+js侧边导航栏</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+        }
+
+        .big {
+            width: 200px;
+            height: 100vh;
+            background-color: palegoldenrod;
+            position: relative;
+        }
+
+        li {
+            width: 200px;
+            height: 50px;
+            background-color: palegreen;
+            position: relative;
+            /* margin-bottom: 10px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            list-style: none;
+        }
+
+        li:hover {
+            background-color: paleturquoise;
+        }
+
+        .two {
+            height: 0px;
+            overflow: hidden;
+        }
+
+        p {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <li>首页</li>
+        <li id="one">
+            院系
+        <li class="two" id="two">师范</li>
+        <li class="two" id="two1">计算机</li>
+        <li class="two" id="two2">数控</li>
+        </li>
+        <li>选课</li>
+        <li>教务系统</li>
+        <li>就业中心</li>
+    </div>
+    <p>内容</p>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    var content = document.getElementById('two');
+    var content1 = document.getElementById('two1');
+    var content2 = document.getElementById('two2');
+
+    $('#one').click(function () {
+        content.style.height = content.offsetHeight == 50 ? 0 + 'px' : 50 + 'px';
+        content1.style.height = content1.offsetHeight == 50 ? 0 + 'px' : 50 + 'px';
+        content2.style.height = content2.offsetHeight == 50 ? 0 + 'px' : 50 + 'px';
+
+    })
+
+</script>
+
+</html>

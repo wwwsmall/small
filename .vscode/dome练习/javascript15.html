@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式属性操作</title>
+</head>
+<style>
+    div {
+        width: 500px;
+        height: 300px;
+        background-color: paleturquoise;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+</style>
+
+<body>
+    <div>通过js改变元素的大小颜色位置等样式element.style行内样式</div>
+</body>
+<script>
+    // 获取div 当点击div时 背景发生改变
+    var div = document.querySelector('div');
+    div.onclick = function () {
+        div.style.backgroundColor = 'yellow';//改变颜色
+        // backgroundColor采用驼峰命名法
+        // div.style 产生的是行内样式 比css权重要高
+        div.style.marginTop = '30px';//改变位置
+        div.style.width = '450px';//改变大小
+    }
+    // 添加鼠标停留
+    div.onmouseover = function () {
+        div.style.backgroundColor = 'blue';
+        // 实现放大效果
+        div.style.transform = 'scale(1.1)'
+        // div.style.width = '450px';
+        // div.style.height = '250px';
+    }
+    // 鼠标移开
+    div.onmouseout = function () {
+        div.style.backgroundColor = 'paleturquoise';
+        // 还原
+        // div.style.width = '500px';
+        // div.style.height = '300px';
+        div.style.transform = 'scale(1)'
+
+    }
+</script>
+
+</html>

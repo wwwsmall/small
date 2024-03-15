@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动切换的登录页面</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .big {
+            background-color: white;
+            width: 650px;
+            height: 415px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .form-box {
+            position: absolute;
+            top: -10%;
+            left: 5%;
+            background-color: palevioletred;
+            width: 320px;
+            height: 500px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            z-index: 2;
+            transition: 0.5s ease-in-out;
+            /* 过渡 加速后减速 */
+        }
+
+        .register-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            /* 大写 */
+            text-transform: uppercase;
+            /* 字间距 */
+            letter-spacing: 5px;
+        }
+
+        input {
+            /* 背景色透明 */
+            background-color: transparent;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid black;
+            /* 外边距 */
+            margin: 8px 0;
+            /* 字号 */
+            font-size: 14px;
+            /* 字间距 */
+            letter-spacing: 2px;
+        }
+
+        /* input 内placeholder的提示信息为白色 */
+        input::placeholder {
+            color: white;
+        }
+
+        /* 点击输入内容的时候没有外边边框 */
+        /* 只有一个下边框白色 并且过渡显示 */
+        input:focus {
+            /* focus 设置元素焦点 */
+            color: white;
+            /* 白色字 */
+            outline: none;
+            /* 没有外边框 */
+            border-bottom: 2px solid white;
+            /* 下边框为2像素 实线 白色 */
+            transition: 0.5s;
+            /* 过渡时间 0.5秒 */
+        }
+
+        input:focus::placeholder {
+            opacity: 0;
+            /* 点击输入内容时 提示信息变为透明  下边框白色*/
+        }
+
+        .hidden {
+            display: none;
+            transition: 0.5s;
+        }
+
+        /* 设置登录框样式 */
+        .form-box button {
+            width: 70%;
+            margin-top: 35px;
+            background-color: #f6f6f6;
+            /* 没有外边框 */
+            outline: none;
+            /* 圆角 */
+            border-radius: 8px;
+            padding: 13px;
+            color: palevioletred;
+            letter-spacing: 2px;
+            border: none;
+        }
+
+        .form-box button:hover {
+            background-color: palevioletred;
+            color: #f6f6f6;
+            transition: background-color 0.5s ease;
+        }
+
+        .con-box {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .con-box.left {
+            left: 10%;
+        }
+
+        .con-box.right {
+            right: -70%;
+        }
+
+        .con-box img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .con-box h2 {
+            text-align: center;
+        }
+
+        .con-box p {
+            text-align: center;
+        }
+
+        .con-box button {
+            width: 100px;
+            height: 30px;
+            margin-top: 3%;
+            background-color: white;
+            color: palevioletred;
+            border: 1px solid palevioletred;
+            padding: 6px 10px;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+            margin-left: 20%;
+        }
+
+        .con-box button:hover {
+            background-color: palevioletred;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="form-box">
+            <div class="register-box hidden">
+                <h1>register</h1>
+                <input type="text" placeholder="用户名">
+                <input type="email" placeholder="邮箱">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="确认密码">
+                <button>注册</button>
+            </div>
+            <div class="login-box ">
+                <h1>login</h1>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <button>登录</button>
+            </div>
+        </div>
+        <div class="con-box">
+            <div class="con-box left">
+                <h2>欢迎来到<span>河南美食世界</span></h2>
+                <p>快来看看河南有什么<span>美食</span>吧</p>
+                <img src="D:\集训网站设计1.15-1.27\img\domeimg\库洛米1.png" />
+                <p>已有账号</p>
+                <button id="login">去登录</button>
+            </div>
+
+            <div class="con-box right">
+                <h2>欢迎来到<span>河南美食世界</span></h2>
+                <p>快来看看河南有什么<span>美食</span>吧</p>
+                <img src="D:\集训网站设计1.15-1.27\img\domeimg\库洛米2.png" />
+                <p>没有账号?</p>
+                <button id="register">去登录</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    let login = document.getElementById('login');
+    let register = document.getElementById('register');
+    let form_box = document.getElementsByClassName('form-box')[0];
+    let register_box = document.getElementsByClassName('register-box')[0];
+    let login_box = document.getElementsByClassName('login-box')[0];
+    register.addEventListener('click', () => {
+        form_box.style.transform = 'translateX(80%)';
+        login_box.classList.add('hidden');
+        register_box.classList.remove('hidden');
+    })
+    login.addEventListener('click', () => {
+        form_box.style.transform = 'translateX(0%)';
+        register_box.classList.add('hidden');
+        login_box.classList.remove('hidden');
+    })
+
+</script>
+
+</html>

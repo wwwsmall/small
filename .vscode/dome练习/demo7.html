@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 使用</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        
+        li{
+            display:inline;
+            /* float: left; */
+            margin-right:20px;
+        }
+        span{
+            width: 200px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: palevioletred;
+        }
+        .hangnei{
+           
+            /* 显示为块元素 */
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <!-- dispaly:none隐藏 -->
+    <ul>
+        <li>我是li</li>
+        <li>我设置了display：inline</li>
+        <li>我将会显示在一行</li>
+        <li>div 好像不能使用display:inline</li>
+        <li>display:inline和float:left;的区别：左浮动不自带height会被下面元素顶掉</li>
+        <li>display:inline带有height不会被顶掉</li>
+    </ul>
+    <div class="heng"></div>
+    <div class="heng"></div>
+    <div class="heng"></div>
+    <div class="heng"></div>
+    <div class="heng"></div>
+    <span class="hangnei"> span 行内元素每一个span 都将会换一行</span>
+    <span class="hangnei"> span 行内元素每一个span 都将会换一行将span添加display:block属性后span换行显示（块元素）</span>
+    <span>我是没有设置display元素的span</span>
+    <span>还有img a 都是行内元素</span>
+</body>
+</html>

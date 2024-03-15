@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东登录案例</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px
+    }
+
+    .big {
+        width: 500px;
+        height: 300px;
+        background-color: palegreen;
+        position: relative;
+        margin: auto;
+        /* display: flex;
+        justify-content: center;
+        justify-items: center;
+        flex-wrap: wrap; */
+
+    }
+
+    .name {
+        width: 500px;
+        height: 50px;
+        background-color: paleturquoise;
+        position: absolute;
+        top: 40px;
+
+    }
+
+    .password {
+        width: 500px;
+        height: 50px;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+
+    }
+
+    .denglu {
+        width: 500px;
+        height: 50px;
+        background-color: rgb(182, 175, 238);
+        position: absolute;
+        top: 160px;
+    }
+
+    h3 {
+        position: absolute;
+        left: 43%;
+        top: 5px;
+    }
+
+    input {
+        width: 500px;
+        height: 50px;
+        border: 0;
+        border-bottom: 1px solid red;
+        outline: none;
+    }
+
+    /* 输入内容时提示信息变透明 */
+    input:focus::placeholder {
+        opacity: 0;
+    }
+
+    #passwords {
+        width: 400px;
+        height: 48px;
+
+
+    }
+
+    #xs {
+        width: 80px;
+        height: 50px;
+        border: 0;
+        background-color: white;
+
+    }
+
+    #xs:hover {
+        background-color: palevioletred;
+    }
+
+    .denglu button {
+        width: 500px;
+        height: 50px;
+        border: 0;
+        background-color: transparent;
+    }
+
+    .denglu button:hover {
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <!-- 京东登录 可以显示密码 -->
+    <div class="big">
+        <h3>京东登录</h3>
+        <div class="name">
+            <input type="text" placeholder="用户名" />
+        </div>
+        <div class="password">
+            <input type="password" placeholder="密码" id="passwords" />
+            <button id="xs">显示密码</button>
+        </div>
+        <div class="denglu">
+            <button>登录</button>
+        </div>
+    </div>
+</body>
+<script>
+    // 获取元素 使用getElementById获取id 元素
+    var btn = document.getElementById('xs');
+    var pw = document.getElementById('passwords');
+    // 声名一个变量 a = true 当第一次点击时 变为false 再次点击为true 进行判断改变 密码框的类型type 
+    // type = text明文
+    // type = password加密
+    var a = true;
+    btn.onclick = function () {
+        if (a == true) {
+            // 两种写法都是改变密码框类型
+            // pw.setAttribute('type', 'text');
+            pw.type = 'text'
+            btn.innerHTML = '隐藏密码';
+            a = false;
+        } else {
+            // pw.setAttribute('type', 'password');
+            pw.type = 'password'
+            btn.innerHTML = '显示密码';
+            a = true;
+        }
+
+    }
+</script>
+
+</html>

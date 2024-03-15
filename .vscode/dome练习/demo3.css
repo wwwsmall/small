@@ -1,0 +1,56 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+li{
+    /* 去除圆点 */
+    list-style: none;
+}
+.father{
+    /* 同一行内的块级元素 */
+    display: inline-block;
+    position: relative;/*相对定位*/
+    padding:10px 20px;
+    background-color: yellow;
+}
+.son{
+    display:none;/*隐藏*/
+    position: absolute;/*绝对定位*/
+    background-color: yellowgreen;
+    top:40px;
+    left:10px;
+    padding:5px;
+}
+.son li{
+    padding: 5px;
+}
+.son li:hover{
+    background-color: palevioletred;
+    color: rebeccapurple;
+}
+.father:hover .son{
+    display: block;/* 显示 */
+    position:absolute;
+}
+a{
+    text-decoration: none;
+    color: palegreen;
+}
+.imgs{
+    position: relative;
+    width:800px;
+    height:600px;
+    background-color:palegoldenrod;
+    overflow: hidden;
+    z-index: -1;
+
+}
+.imgs img{
+    position:absolute;
+    /* z-index: -1; */
+
+}
+.imgs p{
+    position:absolute;
+    /* z-index: -1; */
+}

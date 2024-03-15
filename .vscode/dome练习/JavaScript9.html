@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件基础</title>
+</head>
+
+<body>
+    <!-- 事件：触发相应的机制 -->
+    <!-- 三要素： 事件源 事件类型 事件处理程序 -->
+    <button id="buttoned">按下</button>
+    <!-- 事件源：事件被触发的对象 -->
+</body>
+<script>
+    var buttoneds = document.getElementById('buttoned');
+    console.log(buttoneds);
+    // 事件类型 点击onclick 双击 按下 移入移出
+    // 事件处理程序 通过函数 function()赋值来完成
+    buttoneds.onclick = function () {
+        alert(1);
+    }
+    // buttoneds.onclick(function () {
+    //     alert(1);
+    // })
+    // 不引入jQuery时 点击为onclick 且写法为要操作的对象.onclick=function（）{}
+</script>
+
+</html>

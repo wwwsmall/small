@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击切换内容</title>
+    <style>
+        *{
+            margin:0px;
+            height:0px;
+        }
+        body{
+            /* 百分百窗口 */
+            height: 100vh;
+            /*弹性布局  */
+            display: flex;
+            justify-content: center;
+            /* 所有子元素中心对齐 */
+            align-items: center;
+        }
+        .big{
+            width:800px;
+            height: 500px;
+            /* display: flex; */
+            /* overflow: hidden; */
+            /* background-color: palegoldenrod; */
+        }
+        .one{
+            width:800px;
+            height:500px;
+            background-color: aquamarine;
+            margin-bottom: 10px;
+            opacity: 0;
+            
+        }
+        .one:nth-child(1){
+            background-color: palegoldenrod;
+            position: absolute;
+        }
+        .one:nth-child(2){
+            background-color: rgb(170, 238, 197);
+            position: absolute;
+
+        }.one:nth-child(3){
+            background-color: rgb(170, 178, 238);
+            position: absolute;
+
+        }.one:nth-child(4){
+            background-color: rgb(218, 170, 238);
+            position: absolute;
+
+        }
+        .one:nth-child(1){
+            opacity: 1;
+        }
+        .one-img{
+            width:130px;
+            height:200px;
+            margin-left: 150px;
+            background-color: antiquewhite;
+            background-size: contain;
+            background-repeat: no-repeat;
+            /* overflow: hidden; */
+            position: absolute;
+        }
+        .one-h3{
+            width:60px;
+            height: 30px;
+            background-color: paleturquoise;
+            position: relative;
+            /* margin: auto; */
+            opacity: 0;
+        }
+        .one-h3 h3{
+            text-align: center;
+        }
+        .one p{
+            width:600px;
+            height: 250px;
+            /* background-color: aliceblue; */
+            margin: auto;
+            margin-top: 20px;
+        }
+        .button{
+            width:800px;
+            height: 500px;
+            position: absolute;
+            display: flex;
+            /* 排列在两边 */
+            justify-content: space-between;
+
+        }
+        .left{
+            width: 100px;
+            height: 500px;
+        }
+        .right{
+            width: 100px;
+            height: 500px;
+        }
+        .nei{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border:3px solid aliceblue;
+            display: flex;
+            justify-content: center;
+            margin-top: 25%;
+            font-size: 40px;
+            margin-left: 20px;
+            opacity: 0.5;
+        }
+        .nei:hover{
+            opacity:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="button">
+            <div class="left">
+                <div class="nei">
+                    &lt;
+                </div>
+                </div>
+            <div class="right">
+                <div class="nei">
+                    &gt;
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    var index = 0;
+    $('.left').click(function(){
+        if(index==0){
+            index=$('.one').length-1;
+            $('.one').css('opacity','0');
+            $('.one').eq(index).css('opacity','1');
+        }else{
+            index--;
+            $('.one').css('opacity','0');
+            $('.one').eq(index).css('opacity','1');
+        }
+    })
+    $('.right').click(function(){
+        if(index==$('.one').length-1){
+            index=0;
+            $('.one').css('opacity','0');
+            $('.one').eq(index).css('opacity','1');
+        }else{
+            index++;
+            $('.one').css('opacity','0');
+            $('.one').eq(index).css('opacity','1');
+        }
+    })
+    $('.one-img').click(function(){
+        alert(1)
+    })
+</script>
+</html>

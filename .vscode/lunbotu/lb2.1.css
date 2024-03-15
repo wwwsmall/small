@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.big{
+    width: 500px;
+    height: 300px;
+    background-color: paleturquoise;
+    position: relative;
+}
+.imgs img{
+    width: 500px;
+    height: 300px;
+}
+.imgs{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    /* opacity 透明相当于隐藏 透明0-1不透明 */
+    opacity: 0;
+    /* display: none; */
+    transition: all 1.5s;
+
+}
+/* 设置第一张不透明 */
+.imgs:nth-child(1){
+    opacity: 1;
+    /* display: block; */
+}
+
+.zuo{
+    width: 15px;
+    height: 30px;
+    /* background-color: white; */
+    position: absolute;
+    top: 50%;
+    /* right: px; */
+    font-size: 20px;
+    
+}
+.zuo:hover{
+    color: palevioletred;
+    background-color: paleturquoise;
+}
+.you{
+    width: 15px;
+    height: 30px;
+    /* background-color: white; */
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    font-size: 20px;
+}
+.you:hover{
+    color: palevioletred;
+    background-color: paleturquoise;
+
+}
+.dian>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;    
+}
+.dian li{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: yellow;
+    float: left;
+    margin-right: 10px;
+}
+.dian {
+    position: relative;
+    top: 260px;
+    left: 350px;
+}
+.dian li:hover{
+    background-color: rgb(185, 50, 187);
+}
+.dian li:nth-child(1){
+    background-color: #fff;
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css悬停动画图文</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            /* 百分百窗口 */
+            height:100vh;
+            /* 弹性布局 居中 */
+            display: flex;
+            justify-content: center;
+            /* 所有子元素中心对齐 */
+            align-items: center;
+        }
+        .big{
+           border:3px solid palegoldenrod;
+           display:flex;
+           justify-content: center;
+            align-items: center;
+            /*允许换行  */
+            flex-wrap:wrap;   
+        }
+        .one{
+            position:relative;
+            width:500px;
+            height:350px;
+            margin: 10px;
+            /* 先添加display：flex再使用align-items：flex-end会使内容在最底下 */
+            display:flex;
+            align-items: flex-end;
+            text-align: center;
+            /* 阴影 */
+            box-shadow:0 5px 5px rgba(0,0,0,0.1),
+            0 2px 2px rgba(0,0,0,0.1),
+            0 4px 4px rgba(0,0,0,0.1),
+            0 8px 8px rgba(0,0,0,0.1),
+            0 16px 16px rgba(0,0,0,0.1);
+            color:white;
+            overflow:hidden;
+        }
+        .one::before{
+            content:"";
+            width:100%;
+            height:110%;
+            position:absolute;
+            top:0px;
+            left:0px;
+            background-image: url(/集训网站设计1.15-1.27/hoverimg/1.png);
+            background-size:cover;
+            background-position:0 0;
+            /* 过渡效果 属性名 时长 贝塞尔曲线 */
+            transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+        }
+        .one:nth-child(1)::before{
+            background-image:url(/集训网站设计1.15-1.27/img/hoverimg/1.png);
+        }
+        .one:nth-child(2)::before{
+            background-image:url(/集训网站设计1.15-1.27/img/hoverimg/2.png);
+        }
+        .one:nth-child(3)::before{
+            background-image:url(/集训网站设计1.15-1.27/img/hoverimg/3.png);
+        }
+        .one:nth-child(4)::before{
+            background-image:url(/集训网站设计1.15-1.27/img/hoverimg/4.png);
+        }
+        /* 遮罩 */
+        .one::after{
+            content:"";
+            display:block;
+            width:100%;
+            height:200%;
+           background: linear-gradient(to bottom,
+           rgba(0,0,0,0)0%,
+           rgba(0,0,0,0.25)55%,
+           rgba(0,0,0,0.8)100%);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transform:translateY(0);
+            transition:transform 1.4s cubic-bezier(0.19,1,0.22,1);
+        }
+        .one .one-nei{
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transform: translateY(85%);
+            transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
+        }
+        .one button{
+            cursor: pointer;
+            border: none;
+            background-color: rgb(208, 234, 244);
+            padding: 12px 24px;
+            /* 加粗 */
+            font-weight: bold;
+            margin-top: 25px;
+            color: white;
+
+        }
+        .one button:hover{
+            background-color: pink;
+        }
+        .one .one-nei *:not(h2){
+            /* *除了h2其他元素隐藏 */
+            opacity:0;
+            transform:translateY(20px);
+            transition:transform 0.7s cubic-bezier(0.19,1,0.22,1), opacity 0.7s
+            cubic-bezier(0.19,1,0.22,1);
+        }
+        .one:hover{
+            align-items: center;
+        }
+        .one:hover ::before{
+            transform: translateY(-5%);
+        }
+        .one:hover .one-nei{
+            transform: translateY(-2%);
+        }
+        .one:hover .one-nei *:not(h2){
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay:0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="one">
+            <div class="one-nei">
+                <h2>王子</h2>
+                <p>我应该根据她的行为，而不是根据她的话来判断她。
+                    <br/>
+                    你知道，悲伤的人会爱上日落的。
+                    <br/>
+                    过一种奋发有为的生活，有苦恼，有欢乐，这样的生活才是生活。
+                    <br/>
+                    我想你心里清楚，你可以要求我做任何事，无论牺牲多大，无论何时，我都愿意。
+                    <br/>
+                    我们将会彼此需要，对我而言，你将是宇宙唯一的了，我对你来说，也是世界上唯一的了。
+                    <br/>
+                    这是我的一个秘密，再简单不过的秘密：一个人只有用心去看，才能看到事实。事情的真相只用眼睛是看不见的。
+                </p>
+                <button>查看更多</button>
+            </div>
+        </div>
+        <div class="one">
+            <div class="one-nei">
+                <h2>狐狸</h2>
+                <p>
+                    要对一个人下定论，不应听其言，而应观其行。
+                    <br/>
+                    如果有人钟爱着一朵独一无二的、盛开在浩瀚星海里的花。
+                    <br/>
+                    如果你驯养我，那我的生命就充满阳光，你的脚步声会变得跟其他人的不一样。
+                    <br/>
+                    你们很美，但你们是空虚的。
+                    <br/>
+                    因为是心甘情愿地沉溺，即使死亡也无须被拯救。
+                    <br/>
+                    也许世界上也有五千朵和你一模一样的花，但只有你是我独一无二的玫瑰。
+                </p>
+                <button>查看更多</button>
+            </div>
+        </div>
+        <div class="one">
+            <div class="one-nei">
+                <h2>日落</h2>
+                <p>
+                    忘记朋友是可悲的，不是谁都有朋友。
+                    <br/>
+                    因为你把时间投注在你的玫瑰花身上，所以，她才会如此重要。
+                    <br/>
+                    对我那位商人来说，它们就是财富。
+                    <br/>
+                    当你真的喜欢一个人的时候就会想很多，会很容易办蠢事、说傻话。
+                    <br/>
+                    我心爱的花在那里，在那颗遥远的星星上。
+                    <br/>
+                    我们肉眼看到的星辰，也许在亿万年前已爆裂死亡，此刻它们的光芒到达我的瞳孔，是最神秘的意外。
+                    <br/>
+                    她香气四溢，让我的生活更加芬芳多彩，我真不该离开她的。
+                    <br/>
+                    如果选择被驯养，那就要承担一点哭泣的风险。
+                </p>
+                <button>查看更多</button>
+            </div>
+        </div>
+        <div class="one">
+            <div class="one-nei">
+                <h2>明天</h2>
+                <p>
+                    有一朵玫瑰，我想，她把我驯服了。
+                    <br/>
+                    在我小的时候，圣诞树的灯光，午夜的弥撒的音乐，甜蜜的微笑，这一切都使圣诞节时我收到的礼品辉映着幸福的光彩。
+                    <br/>
+                    审判自己比审判别人难多了。如果你成功地正确审判了自己，那么你就是一个真正的智者了。
+                    <br/>
+                    好讨厌那些大人们，他们自己什么也不懂，还得不断地给他们解释，这真让人讨厌。
+                    <br/>
+                </p>
+                <button>查看更多</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

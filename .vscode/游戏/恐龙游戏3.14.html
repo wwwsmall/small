@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恐龙游戏</title>
+</head>
+<style>
+    .big {
+        width: 300px;
+        height: 150px;
+        border: 1px solid black;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #kl {
+        width: 20px;
+        height: 50px;
+        background-color: pink;
+        position: absolute;
+        bottom: 0px;
+        animation: kl 0.3s linear infinite;
+
+    }
+
+    @keyframes kl {
+        0% {
+            bottom: 0px;
+        }
+
+        30% {
+            bottom: 80px;
+        }
+
+        70% {
+            bottom: 80px;
+        }
+
+        100% {
+            bottom: 0px;
+        }
+    }
+
+    #zq {
+        width: 20px;
+        height: 30px;
+        background-color: yellow;
+        position: absolute;
+        bottom: 0;
+        left: 250px;
+        animation: zq 3s linear infinite;
+    }
+
+    @keyframes zq {
+        0% {
+            left: 250px;
+        }
+
+        100% {
+            left: -20px;
+        }
+    }
+</style>
+
+<body>
+    <div class="big">
+        <div id="kl"></div>
+        <div id="zq"></div>
+    </div>
+
+</body>
+<script>
+    // var kl = document.getElementById('kl');
+    // var zq = document.getElementById('zq');
+    // var spa = -20;
+    // var xunhuan = function move() {
+    //     if (zq.offsetLeft > 0) {
+    //         zq.style.left = zq.offsetLeft + spa + 'px';
+    //     }
+    //     else {
+    //         alert('游戏结束');
+    //         clearInterval(timer);
+    //     }
+    //     var one = function move() {
+    //         if (zq.offsetLeft < 0) {
+    //             zq.style.left = zq.offsetLeft + spa + 'px';
+    //             alert('1');
+    //         }
+    //     }
+    //     let timers = setTimeout(one, 30);
+    // }
+    // let timer = setInterval(xunhuan, 300);
+    window.addEventListener('keydowm', event => {
+        console.log(event);
+    })
+
+
+
+</script>
+
+</html>

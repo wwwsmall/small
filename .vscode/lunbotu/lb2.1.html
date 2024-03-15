@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图2.1版本</title>
+    <link rel="stylesheet" href="lb2.1.css">
+</head>
+<body>
+    <div class="big">
+            <div class="imgs"><img src="D:\集训网站设计1.15-1.27\img\moveimg\库洛米1.png"/></div>
+            <div class="imgs"><img src="D:\集训网站设计1.15-1.27\img\moveimg\奥特曼.jpg"/></div>
+            <div class="imgs"><img src="D:\集训网站设计1.15-1.27\img\moveimg\多读书向前走.jpg"/></div>
+            <div class="zuo">&lt;</div>
+            <div class="you">&gt;</div>
+            <div class="dian">
+                <ul>
+                    <li class="botton"></li>
+                    <li class="botton"></li>
+                    <li class="botton"></li>
+                </ul>
+            </div>
+    </div>
+</body>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script>
+        $(function(){
+            var a = 0;
+            var f;
+            dingshiqi();
+            function dingshiqi(){
+            f=setInterval(function(){
+                if(a==$('.imgs').length-1){
+                    a = 0;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                }else{
+                    a++;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                }
+
+            },4000)
+            }
+            $(".zuo").click(function(){
+                clearInterval(f);
+                if(a==0){
+                    a=$(".imgs").length-1;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                    dingshiqi();
+                }else{
+                    a--;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                    dingshiqi();
+                }
+            })
+            $(".you").click(function(){
+                clearInterval(f);
+                if(a==$(".imgs").length-1){
+                    a=0;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                    dingshiqi();
+                }else{
+                    a++;
+                    $('.imgs').css("opacity","0");
+                    $('.imgs').eq(a).css("opacity","1");
+                    $('.botton').css('background-color', 'paleturquoise');
+                    $('.botton').eq(a).css("background-color","#fff");
+                    dingshiqi();
+                }
+            })
+            $(".botton").click(function(){
+                clearInterval(f);
+                var b = $(this).index();
+                // alert(b);
+                a=b;
+                $('.imgs').css("opacity","0");
+                $('.imgs').eq(a).css("opacity","1");
+                $('.botton').css('background-color', 'paleturquoise');
+                $('.botton').eq(a).css("background-color","#fff");
+                dingshiqi();
+            })
+        })
+    </script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变元素内容innerText innerHTML</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: palegoldenrod;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示时间</button>
+    <div>某个时间</div>
+    <div>
+        <p>张三</p>
+    </div>
+    <div id="innerhtmldiv">
+        张三
+        <br />
+        <strong>李四</strong> 123
+    </div>
+</body>
+<script>
+    var buttons = document.querySelector('button');
+    var divs = document.querySelector('div');
+    buttons.onclick = function () {
+        // 改变元素内容 element.innnerText 从起始位置开始到终止位置 但它去除HTML 同时空格和换行也被去除
+        // divs.innerText = dates;会显示date内所有内容 dates function(){}这种写法知识将dates内的所有内容给divs 要写成封装给getDate()的形式改变输出形式
+        divs.innerText = getDate();
+
+    }
+    // 获取当前时间
+    var date = new Date();//Date()当前时间
+    console.log(date.getFullYear());//返回当前年份 2024
+    console.log(date.getMonth() + 1);//返回当前月份 返回的月份小1 要加1
+    console.log(date.getDate());//返回当前几号
+    console.log(date.getDay());//星期几 周一 1 周六6 周日0
+    // 进行封装使用
+    function getDate() {
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var z = date.getDay();
+        var arr = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+        // 周日0 arr[z]对应索引输出内容 
+        //console.log(date.getFullYear() + date.getMonth())这中写法会直接相加
+        // console.log('今天是' + year + '年' + month + '月' + day + '日' + arr[z]);
+        // 函数返回值通过return输出
+        return '今天是' + year + '年' + month + '月' + day + '日' + arr[z];
+    }
+    // 元素不添加shijian元素不添加事件 直接出现
+    var p = document.querySelector('p');
+    // var p = document.getElementsByTagName('p');获取标签 p
+    // p[0].innerText = getDate();使用时要写成这个样子
+    p.innerText = getDate();//使用querySelector()选择器可以直接p+innerText
+
+    //   innerHTML和innerText的区别
+    //   相同 两个都是可读写的 可以获取里面的内容
+    var innerhtmldiv = document.querySelector('#innerhtmldiv');
+    console.log(innerhtmldiv.innerHTML);//使用innerHTML获取里面的内容 会保留空格和换行 控制台输出会显示里面的标签
+    console.log(innerhtmldiv.innerText);//使用innetText获取不保留 空格和换行 控制台输出不显示里面的标签
+    // innerhtml识别HTML标签
+    innerhtmldiv.innerHTML = '<strong>今天</strong>'//识别HTML标签 控制台会显示出来
+    innerhtmldiv.innerText = '<strong>今天</strong>' //不识别HTML标签会直接显示出来但是控制台不显示
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素对象-getElementsByTagName根据标签名获取</title>
+</head>
+
+<body>
+    <ul>
+        <li>白日依山近</li>
+        <li>白日依山近</li>
+        <li>白日依山近</li>
+        <li>白日依山近</li>
+    </ul>
+    <ol id="ol">
+        <li>黄河入海流</li>
+        <li>黄河入海流</li>
+        <li>黄河入海流</li>
+        <li>黄河入海流</li>
+    </ol>
+    <ol>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ol>
+</body>
+<script>
+    // 返回获取对象的集合 以伪数组的方式存储
+    var lis = document.getElementsByTagName('li');//获取页面中所有li
+    console.log(lis);
+    // 打印指定元素数组名+[]索引
+    console.log(lis[0]);
+    // 依次打印里面的元素对象 遍历对象
+    // 得到的元素对象是动态的(会随着上面的变化)
+    // 如果页面中只有一个li也是返回的伪数组的形式
+    // 如果页面中没有这个元素返回null的空数组
+    for (var i = 0; i < lis.length; i++) {
+        console.log(lis[i]);
+    }
+    var ol = document.getElementsByTagName('ol');
+    // 伪数组形式不能指定父元素
+    //console.log(ol.getElementsByTagName('li'));//报错
+    // 父元素必须一定要指明获取哪一个元素不包含父元素本身
+    // 当页面中有多个ol
+    console.log(ol[0].getElementsByTagName('li'));//页面中第一个ol
+    console.log(ol[1].getElementsByTagName('li'));//页面中第二个ol
+    // 先获取指定id元素
+    var ols = document.getElementById('ol');//获取指定ol
+    console.log(ols.getElementsByTagName('li'));//获取指定ol 的li
+</script>
+
+</html>

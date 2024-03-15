@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增获取元素方法（要考虑兼容性再使用）</title>
+</head>
+
+<body>
+    <div class="box">张三啊</div>
+    <div class="box">张三</div>
+</body>
+<script>
+    // 1.getElementsByClassName()类选择器
+    // 返回值是伪数组
+    var boxx = document.getElementsByClassName('box');
+    console.log(boxx);
+    // 2.querySelector()选择器 返回指定选择器的第一个元素对象 class+. id+#
+    var boxs = document.querySelector('.box');
+    console.log(boxs);
+    // 3.querySelectorAll()选择器 返回指定选择器的所有元素对象集合
+    var boxss = document.querySelectorAll('.box');
+    console.log(boxss);
+    // 遍历输出
+    for (var i = 0; i < boxss.length; i++) {
+        console.log(boxss[i]);
+    }
+</script>
+
+</html>

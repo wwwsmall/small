@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例显示隐藏二维码</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #big {
+        position: relative;
+        margin-top: 100px;
+        margin-left: 200px;
+        width: 500px;
+        height: 540px;
+        background-color: #88e5bd;
+    }
+
+    #ewm {
+        width: 490px;
+        height: 490px;
+        background-color: #9f95ee;
+        position: absolute;
+        top: 40px;
+        left: 5px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #ewm img {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        top: 20px;
+    }
+
+    h3 {
+        position: absolute;
+        top: 5px;
+        left: 40%;
+
+    }
+
+    #clear {
+        width: 30px;
+        height: 30px;
+        background-color: palevioletred;
+        position: absolute;
+    }
+
+    #clear:hover {
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="big">
+        <h3>淘宝二维码</h3>
+        <div id="ewm">
+            <img src="D:\集训网站设计1.15-1.27\img\domeimg\wl.png" />
+        </div>
+        <div id="clear">×</div>
+    </div>
+</body>
+<script>
+    // 获取big和clear
+    var big = document.getElementById('big');
+    var clear = document.getElementById('clear');
+    // 为×注册点击事件
+    clear.onclick = function () {
+        big.style.display = 'none';//将big样式display修改为none隐藏再次刷新出现
+    }
+</script>
+
+</html>

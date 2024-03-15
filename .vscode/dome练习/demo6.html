@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可切换方向无缝衔接滚动图片</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            height: 100vh;
+            /* 百分百窗口高度 */
+            display: flex;
+            /* 弹性布局居中显示 */
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .gundong {
+            width: 800px;
+            /* height: 200px; */
+            /* 相对定位 */
+            position: relative;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* background-color: rgb(35, 109, 173); */
+        }
+
+        .aa {
+            width: 800px;
+            height: 150px;
+            /* overflow:hidden; */
+            display: flex;
+            /* 相对定位 */
+            position: relative;
+        }
+
+        .a {
+            list-style: none;
+            /* height:100%; */
+            /* width: 150px; */
+            padding-right: 20px;
+
+        }
+
+        .a img {
+            width: 200px;
+            height: 150px;
+            /* 保持原有尺寸裁剪长边 */
+            object-fit: cover;
+            /* 图片摆放在正中间 */
+            object-position: center;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .btn {
+            color: white;
+            border: 1px solid palegoldenrod;
+            padding: 5px 15px;
+            margin: 0px 15px;
+            border-radius: 3px;
+        }
+
+        .btn:hover {
+            background-color: paleturquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gundong">
+        <ul class="aa">
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\奥特曼.jpg" /></li>
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\库洛米1.png" /></li>
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\库洛米2.png" /></li>
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\多读书向前走.jpg" /></li>
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\张起灵.jpg" /></li>
+            <li class="a"><img src="D:\集训网站设计1.15-1.27\img\domeimg\刘宇宁.jpg"></li>
+        </ul>
+
+        <div class="btns">
+            <div class="btn">←向左走</div>
+            <div class="btn">向右走→</div>
+        </div>
+    </div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    let ul = document.querySelector('.aa');//获取ul元素
+    ul.innerHTML = ul.innerHTML + ul.innerHTML;//追加一组图片
+    //获取所有li 和 btn
+    let lis = document.querySelectorAll('.a');
+    let btns = document.querySelectorAll('.btn');
+    //每次滚动跨度
+    let spa = -2;
+    ul.style.width = lis[0].offsetWidth * lis.length + 'px';
+    function move() {
+        if (ul.offsetLeft < -ul.offsetWidth / 2) {
+            ul.style.left = '0';
+        }
+        if (ul.offsetLeft > 0) {
+            ul.style.left = -ul.offsetWidth / 2 + 'px';
+        }
+        ul.style.left = ul.offsetLeft + spa + 'px';
+    }
+    let timer = setInterval(move, 30);
+    //悬停停止
+    ul.addEventListener('mousemove', function () {
+        clearInterval(timer);
+    })
+    //移开滚动
+    ul.addEventListener('mouseout', function () {
+        timer = setInterval(move, 30);
+    })
+    //为两个按钮添加点击事件
+    btns[0].addEventListener('click', function () {
+        spa = -2;
+    })
+    btns[1].addEventListener('click', function () {
+        spa = 2;
+    })
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素-getElementById()</title>
+</head>
+
+<body>
+    <div id="time">2024.1.30</div>
+</body>
+<script>
+    // get 获得 element元素 by 通过
+    // 参数 id(id一般情况下独一无二)
+    // 返回的是一个元素对象
+    // 没有指定id返回null
+    var timer = document.getElementById('time');
+    // 向控制台输出
+    console.log(timer);
+    // 查看数据类型
+    console.log(typeof timer);
+    // 打印我们返回的元素对象更好的查看里面的属性和方法
+    console.dir(time);
+</script>
+
+</html>

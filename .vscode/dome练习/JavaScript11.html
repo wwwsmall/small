@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变元素属性</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        img {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+        }
+
+
+        button {
+            display: flex;
+            position: relative;
+            margin-top: 350px;
+            margin-right: 10px;
+            width: 80px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            background-color: paleturquoise;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="lyn">刘宇宁</button>
+    <button id="wl">吴&nbsp;&nbsp;&nbsp;&nbsp;磊</button>
+    <img src="D:\集训网站设计1.15-1.27\img\domeimg\wl.png" title="吴磊" />
+</body>
+<script>
+    var lyn = document.getElementById('lyn');
+    var wl = document.getElementById('wl');
+    var img = document.querySelector('img');
+    lyn.onclick = function () {
+        //    改变元素src属性 达到切换图片效果
+        img.src = '/集训网站设计1.15-1.27/img/domeimg/lyn.png';
+        // 改变title属性 
+        img.title = '刘宇宁';
+    }
+    wl.onclick = function () {
+        img.src = '/集训网站设计1.15-1.27/img/domeimg/wl.png';
+        img.title = '吴磊';
+    }
+</script>
+
+</html>

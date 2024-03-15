@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单击事件click 双击事件 dblclick</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .div-click {
+            width: 100px;
+            height: 50px;
+            background-color: palegoldenrod;
+        }
+
+        .div-mouseover {
+            width: 200px;
+            height: 50px;
+            background-color: palegreen;
+            margin-top: 10px;
+        }
+
+        .div-mouseout {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(152, 215, 251);
+            margin-top: 10px;
+        }
+
+        #content {
+            width: 70px;
+            height: 70px;
+            background-color: paleturquoise;
+            margin-right: 10px;
+            float: left;
+
+        }
+
+        .btn {
+            /* 转换为块元素不会被左浮动挤掉 */
+            display: block;
+        }
+
+        .div-btn {
+            display: block;
+            clear: both;
+            /* 转换为块元素 然后清除左右浮动 */
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p3">这是双击事件</p>
+    <div class="div-click">点击我 click</div>
+    <div class="div-mouseover">鼠标放在我上面 字体变为蓝色</div>
+    <div class="div-mouseout">设置css样式另一种方式</div>
+    <button class="btn">点击我</button>
+    <div id="content">看我的动态效果</div>
+    <div id="content">能多次点击发生变化</div>
+    <div id="content">最终是100*100的方块</div>
+    <div id="content">字号为16</div>
+    <button class="div-btn">点击我上面div发生变化</button>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    // $('#p3')获取id为p3的元素
+    // 添加双击事件dblclick
+    $('#p3').dblclick(function () {
+        // 当双击之后为元素添加动画
+        $(this).animate({
+            // 字号为28px
+            fontSize: '28px',
+            // 半透明
+            opacity: '0.5'
+            //,号后面加速度 fast 快速的
+        }, 'fast')
+        //3000为时间
+        // }, 3000)
+    })
+    //获取.div-click 添加click点击事件
+    $('.div-click').click(function () {
+        // 单机使其在3秒内消失
+        // $(this).hide(5000);
+        // 点击背景变为红色
+        $(this).css('background-color', 'red');
+        // 点击字号变30px
+        $(this).css('font-size', '30px')
+    })
+    // 获取.div-mouseover 添加mouseover鼠标停留在元素之上
+    $('.div-mouseover').mouseover(function () {
+        // 字体变为蓝色
+        $(this).css('color', 'blue');
+        // 字号为20px
+        $(this).css('fontSize', '20px');
+    })
+    // 获取.div-mouseover添加mouseout鼠标移开
+    $('.div-mouseover').mouseout(function () {
+        // 字体颜色为红色
+        $(this).css('color', 'red');
+        // 字号为 16px
+        $(this).css('fontSize', '16px');
+    })
+    // 获取.div-mouseout添加mouseover鼠标停留
+    $('.div-mouseout').mousemove(function () {
+        $(this).css({
+            color: 'red',
+            fontSize: '20px'
+        })
+    })
+    $('.div-mouseout').mouseout(function () {
+        $(this).css({
+            color: 'black',
+            fontSize: '16px'
+        })
+    })
+    // 获取.btn添加点击事件
+    $('.btn').click(function () {
+        // 点击btn高和宽变为200px
+        $(this).animate({ 'height': '200px', 'width': '200px' })
+    })
+    // 获取.doc-btn添加点击事件
+    $('.div-btn').click(function () {
+        // 对应的content 高变为200px 字号24 块
+        $('#content').animate({ 'height': '200px', 'fontSize': '24px' }, 'fast')
+        // 对应的content 宽变为200px 字号16 慢
+        $('#content').animate({ 'width': '200px', 'fontSize': '16px' }, 'slow')
+        // 对应的content 高变为200px 字号24 块
+        $('#content').animate({ 'height': '100px', 'fontSize': '24px' }, 'fast')
+        // 对应的content 宽变为200px 字号16 慢
+        $('#content').animate({ 'width': '100px', 'fontSize': '16px' }, 'slow')
+    })
+</script>
+
+</html>
